@@ -1,23 +1,7 @@
 
+
 class CatalogModel{
-  static final item= [
-    Item(
-        id: 1,
-        name: "iPhone",
-        desc: "Hi there",
-        price: 10,
-        color: "#33505a",
-        image: "https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
-    ),
-    Item(
-        id: 1,
-        name: "iPhone",
-        desc: "Hi there",
-        price: 10,
-        color: "#33505a",
-        image: "https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
-    )
-  ];
+  static List<Item> item=null;
 }
 class Item{
   final int id;
@@ -28,4 +12,24 @@ class Item{
   final String image;
 
   Item({this.id, this.name, this.desc, this.price, this.color, this.image});
+
+
+  factory Item.fromMap(Map<String,dynamic> map){
+    return Item(
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      price: map['price'],
+      color: map['color'],
+      image: map['image'],
+    );
+  }
+  toMap()=>{
+    "id":id,
+    "name":name,
+    "desc":desc,
+    "price":price,
+    "color":color,
+    "image":image,
+  };
 }
