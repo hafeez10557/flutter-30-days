@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hellow_world/pages/cart_page.dart';
 import 'package:flutter_hellow_world/pages/home_page.dart';
 import 'package:flutter_hellow_world/pages/login_page.dart';
 import 'package:flutter_hellow_world/utils/routes.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => HomePage(),
         MyRouts.homeRouts: (context) => HomePage(),
         MyRouts.loginRouts: (context) => LoginPage(),
+        MyRouts.cartRouts: (context) => CartPage(),
       },
     );
   }

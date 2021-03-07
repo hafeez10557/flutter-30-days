@@ -12,7 +12,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(),
+      appBar:AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -23,12 +25,12 @@ class HomeDetailPage extends StatelessWidget {
             "\$${catalog.price}".text.bold.xl4.red800.make(),
             ElevatedButton(
               onPressed:  () {},
-              child: "Buy".text.make(),
+              child: "Add to Cart".text.make(),
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
                   shape: MaterialStateProperty.all(StadiumBorder())
               ),
-            ).wh(100, 50),
+            ).wh(150, 50),
           ],
         ).p32(),
       ),
@@ -52,6 +54,12 @@ class HomeDetailPage extends StatelessWidget {
                   children: [
                     catalog.name.text.xl4.color(MyTheme.darkBluishColor).bold.make(),
                     catalog.desc.text.xl.textStyle(context.captionStyle).make(),
+                    "Lorem Ipsum is simply dumms, and more recently with desk including versions of Lorem Ipsum"
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p8()
+
                   ],
                 ).p64(),
               ),
